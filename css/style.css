@@ -270,3 +270,68 @@ nav a:hover {
     overflow: hidden;
 }
 
+
+
+/* Modal Cadastro */
+.modalCadastro {
+    display: none;
+    width: 50%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 16px;
+    background-color: #6E906C;
+    position: fixed;
+    right: 25%;
+    top: 10%;
+    padding: 50px; /* Adicionado padding para espaçamento interno */
+    z-index: 10;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px; /* Adicionado gap entre os campos */
+    margin-right: 30px;
+}
+
+.form-grid label {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.form-grid input[type="text"],
+.form-grid input[type="password"],
+.form-grid input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+#btnCadastrarModal {
+    width: 180px;
+    padding: 15px; /* Aumentado o padding para deixar o botão maior */
+    background-color: #cac4ad;
+    color: #3f5b45;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    margin-top: 20px; /* Espaçamento acima do botão */
+    transition: 0.7s;
+    font-size: 22px;
+}
+
+#btnCadastrarModal:hover {
+    padding: 20px;
+    width: 210px;
+    color: #dadfdb;
+    background-color: #425e49;
+}
+
+
+.espacamento{
+    margin-right: 30px;
+}
+
+

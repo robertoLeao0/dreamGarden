@@ -63,12 +63,10 @@
             charme que você busca para momentos especiais.</p>
     </section>
 
-
     <!-- Rodapé -->
     <footer class="footer">
         <p>Copyright | ©Dream Garden</p>
     </footer>
-
 
     <div class="modalLogin">
         <ul class="ulModalLogin">
@@ -83,16 +81,66 @@
                 <input type="text" name="usuario">
                 <label id="labelSenha" for="senha">Senha</label>
                 <input type="password" name="senha">
-                <button>Entrar</button>
+                <button id="btnEntrarModal">Entrar</button>
             </li>
             <li class="naoTenhoConta">
-                <a href="">Não tenho conta</a>
+                <a href="#" id="btnNaoTenhoConta">Não tenho conta</a>
             </li>
         </ul>
     </div>
 
-    <div class="modalOverlay" id="modalOverlay" style="display: none;"></div>
+    <!-- Modal de Cadastro -->
+    <div class="modalCadastro" id="modalCadastro">
+        <ul class="ulModalCadastro">
+            <li class="li1Modal">
+                <div class="div1Modal">
+                    <h1>Cadastrar</h1>
+                </div>
+                <div class="div2Modal"><img id="btnFecharModalCadastro" src="./img/iconFechar.png" alt=""></div>
+            </li>
+        </ul>
+        <div class="form-grid">
+            <div class="grid-item espacamento">
+                <label for="nomeCompleto">Nome Completo</label>
+                <input type="text" id="nomeCompleto" placeholder="Nome Completo" required>
+            </div>
+            <div class="grid-item">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="grid-item espacamento">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Senha" required>
+            </div>
+            <div class="grid-item">
+                <label for="confirmarSenha">Confirmar Senha</label>
+                <input type="password" id="confirmarSenha" placeholder="Senha" required>
+            </div>
+            <div class="grid-item espacamento">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" placeholder="CEP" required>
+            </div>
+            <div class="grid-item">
+                <label for="rua">Rua</label>
+                <input type="text" id="rua" placeholder="Rua" required>
+            </div>
+            <div class="grid-item espacamento">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" placeholder="Cidade" required>
+            </div>
+            <div class="grid-item">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" placeholder="Estado" required>
+            </div>
+            <div class="grid-item espacamento">
+                <label for="pais">País</label>
+                <input type="text" id="pais" placeholder="País" required>
+            </div>
+        </div>
+        <button id="btnCadastrarModal">Cadastrar</button>
+    </div>
 
+    <div class="modalOverlay" id="modalOverlay" style="display: none;"></div>
 
     <script src="./js/script.js"></script>
 </body>
