@@ -18,6 +18,9 @@ document.querySelector('.naoTenhoConta a').addEventListener('click', (event) => 
     document.getElementById('modalCadastro').style.display = 'block'; // Exibe o modal de cadastro
     document.getElementById('modalOverlay').style.display = 'block'; // Exibe o overlay
     document.body.classList.add('no-scroll'); // Desabilita o scroll da página
+    document.getElementsByClassName('modalLogin')[0].style.display = 'none';
+    document.getElementById('modalOverlay').style.display = 'none'; 
+    document.body.classList.remove('no-scroll');
 });
 
 // Fechar o modal de cadastro e o overlay
@@ -75,3 +78,46 @@ document.getElementById('btnCadastrarModal').addEventListener('click', () => {
     document.getElementById('estado').value = '';
     document.getElementById('pais').value = '';
 });
+
+
+
+
+// contato
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("modalContatoContent");
+    const btn = document.getElementById("modalContato");
+    const closeBtn = modal.querySelector('.close');
+    const form = modal.querySelector('form');
+
+    // Abre o modal ao clicar no botão
+    btn.onclick = function(event) {
+        event.preventDefault();
+        modal.style.display = "flex"; // Usa flexbox para centralizar
+        document.body.style.overflow = "hidden"; // Desabilita scroll
+    }
+
+    // Fecha o modal ao clicar no botão "x"
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Restaura scroll
+    }
+
+    // Fecha o modal ao clicar fora dele
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = ""; // Restaura scroll
+        }
+    }
+
+    // Envio do formulário
+    form.onsubmit = function(event) {
+        event.preventDefault();
+        alert(`${form.querySelector('h2').innerText} enviado!`);
+        modal.style.display = "none"; // Fecha o modal após o envio
+        form.reset(); // Reseta o formulário
+        document.body.style.overflow = ""; // Restaura scroll
+    }
+});
+

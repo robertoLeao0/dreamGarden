@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Dream Garden</title>
 </head>
 
@@ -12,40 +12,18 @@
     <!-- Cabeçalho -->
     <header>
         <nav>
-            <img src="img/logo.png" alt="Logo da Floricultura" width="150">
+            <img src="../img/logo.png" alt="Logo da Floricultura" width="150">
             <div>
                 <a href="./pages/indexEnglish.html">English</a>
                 <a href="./index.html">Início</a>
-                <a href="" id="modalContato">Contato</a>
+                <a href="#">Produtos</a>
+                <a href="./pages/contato.html">Contato</a>
             </div>
-            <img src="./img/carrinho-de-compras.png" class="carrinhoCompras" height="40" alt="">
             <button id="btnEntrar">Entrar</button>
         </nav>
     </header>
-    <!-- contato -->
 
-    <section id="modalContatoContent" class="modalContato">
-        <article class="modal-content">
-            <button class="close" aria-label="Fechar modal">&times;</button>
-            <h2>Formulário de Contato</h2>
-            <form id="contactForm" aria-labelledby="modalTitle">
-                <label for="contactName">Nome:</label>
-                <input type="text" id="contactName" required>
-                
-                <label for="contactEmail">Email:</label>
-                <input type="email" id="contactEmail" required>
-                
-                <label for="contactMessage">Dúvidas:</label>
-                <textarea id="contactMessage" required></textarea>
-                
-                <button type="submit">Enviar</button>
-            </form>
-        </article>
-    </section>
-    
-    
     <!-- Banner Principal -->
-
     <section class="banner">
         <ul class="ulBannerImg">
             <li class="li1Banner"><img src="./img/image.png" alt=""></li>
@@ -55,63 +33,7 @@
         </ul>
     </section>
 
-    <!-- Destaques -->
-    <section class="destaques">
-        <h2>Destaques</h2>
-        <div class="produtos">
-            <ul>
-                <li class="test">
-                    <div class="produto">
-                        <img src="./img/arranjo1.png" alt="Arranjo 1">
-                        <h3>Buquê para casamento clássico</h3>
-                        <p>R$ 150,00</p>
-                        <button>+</button>
-                    </div>
-                    <div class="produto">
-                        <img src="./img/arranjo2.png" alt="Arranjo 2">
-                        <h3>Buquê para casamento rústico</h3>
-                        <p>R$ 120,00</p>
-                        <button>+</button>
-                    </div>
-                    <div class="produto">
-                        <img src="./img/arranjo3.png" alt="Arranjo 3">
-                        <h3>Buquê para comemoração especial</h3>
-                        <p>R$ 180,00</p>
-                        <button>+</button>
-                    </div>
-                </li>
-                <li class="test">
-                    <div class="produto">
-                        <img src="./img/arranjo4.png" height="260px" alt="Arranjo 1">
-                        <h3>Buquê de Rosas Vermelhas Luxo</h3>
-                        <p> R$ 220,00</p>
-                        <button>+</button>
-                    </div>
-                    <div class="produto">
-                        <img src="./img/arranjo5.png" alt="Arranjo 2">
-                        <h3>Buquê de Flores do Campo</h3>
-                        <p> R$ 95,00</p>
-                        <button>+</button>
-                    </div>
-                    <div class="produto">
-                        <img src="./img/arranjo6.png" alt="Arranjo 3">
-                        <h3>Arranjo de Orquídeas Exóticas</h3>
-                        <p>R$ 350,00</p>
-                        <button>+</button>
-                    </div>
-                </li>
-            </ul>
-            
-        </div>
-    </section>
-
-    <!-- Sobre Nós -->
-    <section class="sobre">
-        <h2>Um pouco sobre nós</h2>
-        <p>Há mais de 6 anos no mercado, nossa floricultura é referência em qualidade, tradição e cuidado em cada
-            detalhe. Nossos produtos são feitos com flores frescas e de alta qualidade, proporcionando a beleza e o
-            charme que você busca para momentos especiais.</p>
-    </section>
+   
 
     <!-- Rodapé -->
     <footer class="footer">
@@ -192,7 +114,8 @@
 
     <div class="modalOverlay" id="modalOverlay" style="display: none;"></div>
 
-    <script src="./js/script.js"></script>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
