@@ -68,7 +68,7 @@ nav a:hover {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    right: 9%;
+    right: 12.5%;
     top: 30%;
     transition: 2s;
 }
@@ -78,7 +78,7 @@ nav a:hover {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    right: 6%;
+    right: 10%;
     top: 15%;
 }
 
