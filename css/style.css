@@ -470,3 +470,26 @@ nav a:hover {
 .produto {
     margin: 27px 125px;
 }
+
+
+
+/* botao de ajuda */
+
+.help-button {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da direita da tela */
+    background-color: #28a745; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1000; /* Mantém o botão acima de outros elementos */
+}
+
+.help-button:hover {
+    background-color: #218838; /* Cor ao passar o mouse */
+}
