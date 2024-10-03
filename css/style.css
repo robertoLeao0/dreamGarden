@@ -168,24 +168,52 @@ nav a:hover {
 }
 
 .sobre {
-    background-color: #ded8d2;
-    padding: 40px 20px;
-    text-align: center;
+    padding: 50px 20px;
+    background-color: #989393;
 }
 
 .sobre h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #22651D;
+    font-family: "Gochi Hand", cursive;
 }
 
-.sobre p {
-    max-width: 800px;
+.sobre-conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    max-width: 1200px;
     margin: 0 auto;
-    font-size: 16px;
+}
+
+.texto-sobre {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.texto-sobre h1 {
+    font-family: "Gochi Hand", cursive;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #22651D;
+}
+
+.imagem-sobre {
+    flex: 1;
+    text-align: center;
+}
+
+.imagem-sobre img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas na imagem */
 }
 
 .footer {
-    background-color: #989393;
+    background-color: #2E492C;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -386,7 +414,7 @@ nav a:hover {
     background-color: #6E906C;
     padding: 20px;
     border-radius: 5px;
-    width: 300px;
+    width: 500px;
 }
 
 .close {
@@ -411,8 +439,11 @@ nav a:hover {
 .modalContato input[type="text"],
 .modalContato input[type="email"],
 .modalContato textarea {
-    width: 100%;
-    padding: 8px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
     margin-bottom: 10px;
 }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -14,12 +14,12 @@
         <nav>
             <img src="../img/logo.png" alt="Floriculture Logo" width="150">
             <div>
-                <a href="../index.html">Português</a>
+                <a href="../index.html">English</a>
                 <a href="./indexEnglish.html">Home</a>
                 <a href="" id="modalContato">Contact</a>
             </div>
             <span id="nomeUsuario" style="display: none;"><img id="iconUser" src="../img/userImg.png" alt=""></span>
-            <button id="btnEntrar">Login</button>
+            <button id="btnEntrar">Log In</button>
             <img src="../img/carrinho-de-compras.png" class="carrinhoCompras" height="40" alt="">
         </nav>
     </header>
@@ -32,26 +32,25 @@
             <form id="contactForm" aria-labelledby="modalTitle">
                 <label for="contactName">Name:</label>
                 <input type="text" id="contactName" required>
-                
+
                 <label for="contactEmail">Email:</label>
                 <input type="email" id="contactEmail" required>
-                
-                <label for="contactMessage">Inquiries:</label>
+
+                <label for="contactMessage">Questions:</label>
                 <textarea id="contactMessage" required></textarea>
-                
+
                 <button type="submit">Send</button>
             </form>
         </article>
     </section>
-    
-    
+
     <!-- Main Banner -->
 
     <section class="banner">
         <ul class="ulBannerImg">
             <li class="li1Banner"><img src="../img/image.png" alt=""></li>
             <li class="li2Banner">
-                <h1>Flowers that enchant, feelings that bloom.</h1>
+                <h1>Flowers that enchant, feelings that blossom.</h1>
             </li>
         </ul>
     </section>
@@ -83,33 +82,45 @@
                 </li>
                 <li class="test">
                     <div class="produto">
-                        <img src="../img/arranjo4.png" height="260px" alt="Arrangement 1">
-                        <h3>Luxury Red Rose Bouquet</h3>
-                        <p> R$ 220,00</p>
+                        <img src="../img/arranjo4.png" height="260px" alt="Arrangement 4">
+                        <h3>Luxury Red Roses Bouquet</h3>
+                        <p>R$ 220,00</p>
                         <button>+</button>
                     </div>
                     <div class="produto">
-                        <img src="../img/arranjo5.png" alt="Arrangement 2">
+                        <img src="../img/arranjo5.png" alt="Arrangement 5">
                         <h3>Wildflower Bouquet</h3>
-                        <p> R$ 95,00</p>
+                        <p>R$ 95,00</p>
                         <button>+</button>
                     </div>
                     <div class="produto">
-                        <img src="../img/arranjo6.png" alt="Arrangement 3">
+                        <img src="../img/arranjo6.png" alt="Arrangement 6">
                         <h3>Exotic Orchid Arrangement</h3>
                         <p>R$ 350,00</p>
                         <button>+</button>
                     </div>
                 </li>
             </ul>
-            
+
         </div>
     </section>
 
     <!-- About Us -->
     <section class="sobre">
-        <h2>A little about us</h2>
-        <p>For over 6 years in the market, our floriculture is a reference in quality, tradition, and care in every detail. Our products are made with fresh and high-quality flowers, providing the beauty and charm you seek for special moments.</p>
+        <h2>A Little About Us</h2>
+        <div class="sobre-conteudo">
+            <div class="texto-sobre">
+                <h1>
+                    For over 6 years in the market, our floriculture stands out for selling high-quality flowers and jars, with impeccable service.
+                    Specializing in flowers for all occasions, we offer fresh and imported products, always ensuring the best for our customers. 
+                    In addition to quality, our fast and careful delivery is a differentiator that has built trust over the years.
+                    We want every flower delivered to be more than a gift; it should be a memory that blooms, spreading color and joy in every special moment.
+                </h1>
+            </div>
+            <div class="imagem-sobre">
+                <img src="../img/quemSomos.png" alt="Image about the flower shop">
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -130,10 +141,10 @@
                 <input type="text" name="usuario">
                 <label id="labelSenha" for="senha">Password</label>
                 <input type="password" name="senha">
-                <button id="btnEntrarModal">Login</button>
+                <button id="btnEntrarModal">Log In</button>
             </li>
             <li class="naoTenhoConta">
-                <a href="" id="btnNaoTenhoConta">I don’t have an account</a>
+                <a href="" id="btnNaoTenhoConta">I don't have an account</a>
             </li>
         </ul>
     </div>
@@ -170,8 +181,8 @@
                 <input type="password" id="confirmarSenha" placeholder="Password" required>
             </div>
             <div class="grid-item espacamento">
-                <label for="cep">ZIP Code</label>
-                <input type="text" id="cep" placeholder="ZIP Code" required>
+                <label for="cep">Postal Code</label>
+                <input type="text" id="cep" placeholder="Postal Code" required>
             </div>
             <div class="grid-item">
                 <label for="rua">Street</label>
