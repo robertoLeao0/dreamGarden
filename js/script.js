@@ -1,123 +1,159 @@
-// Abrir o modal de login e o overlay
+
+function abrirModal(modal, overlay) {
+    modal.style.display = 'block';
+    overlay.style.display = 'block';
+    document.body.classList.add('no-scroll');
+}
+
+
+function fecharModal(modal, overlay) {
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.classList.remove('no-scroll');
+    
+    const inputsLogin = document.querySelectorAll('.modalLogin input');
+    inputsLogin.forEach(input => input.value = '');
+
+    const inputsCadastro = document.querySelectorAll('#modalCadastro input');
+    inputsCadastro.forEach(input => input.value = '');
+}
+
+if (localStorage.getItem('usuarios') === null) {
+    localStorage.setItem('usuarios', JSON.stringify([]));
+}
+
+
 document.getElementById('btnEntrar').addEventListener('click', () => {
-    document.getElementsByClassName('modalLogin')[0].style.display = 'block';
-    document.getElementById('modalOverlay').style.display = 'block'; 
+    abrirModal(document.getElementsByClassName('modalLogin')[0], document.getElementById('modalOverlay'));
+});
+
+
+document.getElementById('btnFecharModal').addEventListener('click', () => {
+    fecharModal(document.getElementsByClassName('modalLogin')[0], document.getElementById('modalOverlay'));
+});
+
+
+document.getElementById('btnNaoTenhoConta').addEventListener('click', (event) => {
+    event.preventDefault();
+    const modalCadastro = document.getElementById('modalCadastro');
+    const modalLogin = document.getElementsByClassName('modalLogin')[0];
+    abrirModal(modalCadastro, document.getElementById('modalOverlay'));
+    modalLogin.style.display = 'none';
+});
+
+
+document.getElementById('btnFecharModalCadastro').addEventListener('click', () => {
+    fecharModal(document.getElementById('modalCadastro'), document.getElementById('modalOverlay'));
+});
+
+
+document.getElementById('btnCadastrarModal').addEventListener('click', () => {
+    const usuarioCadastro = document.getElementById('usuarioCadastro').value;
+    const senha = document.getElementById('senha').value;
+    const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+    const usuariosExistentes = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // Validação: Verifica se o usuário já existe
+    const usuarioJaExiste = usuariosExistentes.find(usuario => usuario.usuario === usuarioCadastro);
+    if (usuarioJaExiste) {
+        alert('Usuário já existe. Escolha outro nome de usuário.');
+        return;
+    }
+
+
+    if (senha !== confirmarSenha) {
+        alert('A senha e a confirmação de senha devem ser iguais.');
+        return;
+    }
+
+    // Adiciona o novo usuário ao localStorage
+    const novoUsuario = {
+        nomeCompleto: document.getElementById('nomeCompleto').value,
+        email: document.getElementById('email').value,
+        usuario: usuarioCadastro,
+        senha: senha,
+        cep: document.getElementById('cep').value,
+        rua: document.getElementById('rua').value,
+        cidade: document.getElementById('cidade').value,
+        estado: document.getElementById('estado').value,
+        pais: document.getElementById('pais').value,
+        logado: false
+    };
+
+    usuariosExistentes.push(novoUsuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuariosExistentes));
+
+    fecharModal(document.getElementById('modalCadastro'), document.getElementById('modalOverlay'));
+});
+
+
+document.getElementById('btnEntrarModal').addEventListener('click', () => {
+    const usuarioLogin = document.querySelector('input[name="usuario"]').value;
+    const senhaLogin = document.querySelector('input[name="senha"]').value;
+
+    const usuariosExistentes = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const usuarioValido = usuariosExistentes.find(usuario => usuario.usuario === usuarioLogin && usuario.senha === senhaLogin);
+
+    if (usuarioValido) {
+        usuariosExistentes.forEach(usuario => {
+            usuario.logado = false;
+        });
+        usuarioValido.logado = true;
+        localStorage.setItem('usuarios', JSON.stringify(usuariosExistentes));
+
+        const nameUser = document.createElement('h1');
+        nameUser.id = "nameUser";
+        nameUser.innerText = usuarioValido.usuario;
+        document.getElementById('nomeUsuario').appendChild(nameUser);
+        document.getElementById('nomeUsuario').style.display = 'inline';
+        document.getElementsByClassName('carrinhoCompras')[0].style.right = '35.5%';
+        document.getElementById('btnEntrar').style.display = 'none';
+        document.querySelector('input[name="usuario"]').value = '';
+        document.querySelector('input[name="senha"]').value = '';
+
+        fecharModal(document.getElementsByClassName('modalLogin')[0], document.getElementById('modalOverlay'));
+
+    } else {
+        alert('Usuário ou senha incorretos');
+    }
+});
+
+document.getElementById('nomeUsuario').addEventListener('click', () => {
+    const usuariosExistentes = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const usuarioLogado = usuariosExistentes.find(usuario => usuario.logado === true);
+
+    if (usuarioLogado) {
+        usuarioLogado.logado = false;
+        localStorage.setItem('usuarios', JSON.stringify(usuariosExistentes));
+        document.getElementById('nomeUsuario').innerHTML = '';
+        document.getElementById('nomeUsuario').style.display = 'none';
+        document.getElementsByClassName('carrinhoCompras')[0].style.right = '2.2%';
+        document.getElementById('btnEntrar').style.display = 'inline';
+    }
+});
+
+
+const modalContatoLink = document.getElementById('modalContato');
+const modalContato = document.getElementById('modalContatoContent');
+const closeModal = document.querySelector('.close');
+
+
+modalContatoLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalContato.style.display = 'flex';
     document.body.classList.add('no-scroll');
 });
 
-// Fechar o modal de login e o overlay
-document.getElementById('btnFecharModal').addEventListener('click', () => {
-    document.getElementsByClassName('modalLogin')[0].style.display = 'none';
-    document.getElementById('modalOverlay').style.display = 'none'; 
+
+closeModal.addEventListener('click', () => {
+    modalContato.style.display = 'none';
     document.body.classList.remove('no-scroll');
 });
 
-// Abrir o modal de cadastro ao clicar em "Não tenho conta"
-document.querySelector('.naoTenhoConta a').addEventListener('click', (event) => {
-    event.preventDefault(); // Evitar o comportamento padrão do link
-    document.getElementById('modalCadastro').style.display = 'block'; // Exibe o modal de cadastro
-    document.getElementById('modalOverlay').style.display = 'block'; // Exibe o overlay
-    document.body.classList.add('no-scroll'); // Desabilita o scroll da página
-    document.getElementsByClassName('modalLogin')[0].style.display = 'none';
-    document.getElementById('modalOverlay').style.display = 'none'; 
-    document.body.classList.remove('no-scroll');
-});
 
-// Fechar o modal de cadastro e o overlay
-document.getElementById('btnFecharModalCadastro').addEventListener('click', () => {
-    document.getElementById('modalCadastro').style.display = 'none';
-    document.getElementById('modalOverlay').style.display = 'none';
-    document.body.classList.remove('no-scroll');
-});
-
-// Armazenar dados no Local Storage ao clicar em "Cadastrar"
-document.getElementById('btnCadastrarModal').addEventListener('click', () => {
-    const nomeCompleto = document.getElementById('nomeCompleto').value;
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-    const cep = document.getElementById('cep').value;
-    const rua = document.getElementById('rua').value;
-    const cidade = document.getElementById('cidade').value;
-    const estado = document.getElementById('estado').value;
-    const pais = document.getElementById('pais').value;
-
-    // Recuperar a lista de usuários existente ou criar uma nova lista
-    const usuariosExistentes = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-    // Criar um novo objeto de usuário
-    const novoUsuario = {
-        nomeCompleto,
-        email,
-        senha,
-        cep,
-        rua,
-        cidade,
-        estado,
-        pais
-    };
-
-    // Adicionar o novo usuário à lista
-    usuariosExistentes.push(novoUsuario);
-
-    // Armazenar a lista de usuários no Local Storage
-    localStorage.setItem('usuarios', JSON.stringify(usuariosExistentes));
-
-    // Fechar o modal de cadastro e o overlay
-    document.getElementById('modalCadastro').style.display = 'none';
-    document.getElementById('modalOverlay').style.display = 'none';
-    document.body.classList.remove('no-scroll');
-
-    // Limpar os campos do formulário
-    document.getElementById('nomeCompleto').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('senha').value = '';
-    document.getElementById('confirmarSenha').value = '';
-    document.getElementById('cep').value = '';
-    document.getElementById('rua').value = '';
-    document.getElementById('cidade').value = '';
-    document.getElementById('estado').value = '';
-    document.getElementById('pais').value = '';
-});
-
-
-
-
-// contato
-
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById("modalContatoContent");
-    const btn = document.getElementById("modalContato");
-    const closeBtn = modal.querySelector('.close');
-    const form = modal.querySelector('form');
-
-    // Abre o modal ao clicar no botão
-    btn.onclick = function(event) {
-        event.preventDefault();
-        modal.style.display = "flex"; // Usa flexbox para centralizar
-        document.body.style.overflow = "hidden"; // Desabilita scroll
-    }
-
-    // Fecha o modal ao clicar no botão "x"
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-        document.body.style.overflow = ""; // Restaura scroll
-    }
-
-    // Fecha o modal ao clicar fora dele
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            document.body.style.overflow = ""; // Restaura scroll
-        }
-    }
-
-    // Envio do formulário
-    form.onsubmit = function(event) {
-        event.preventDefault();
-        alert(`${form.querySelector('h2').innerText} enviado!`);
-        modal.style.display = "none"; // Fecha o modal após o envio
-        form.reset(); // Reseta o formulário
-        document.body.style.overflow = ""; // Restaura scroll
+window.addEventListener('click', (e) => {
+    if (e.target === modalContato) {
+        modalContato.style.display = 'none';
     }
 });
-

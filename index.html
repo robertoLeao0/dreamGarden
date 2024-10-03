@@ -18,8 +18,9 @@
                 <a href="./index.html">Início</a>
                 <a href="" id="modalContato">Contato</a>
             </div>
-            <img src="./img/carrinho-de-compras.png" class="carrinhoCompras" height="40" alt="">
+            <span id="nomeUsuario" style="display: none;"><img id="iconUser" src="./img/userImg.png" alt=""></span>
             <button id="btnEntrar">Entrar</button>
+            <img src="./img/carrinho-de-compras.png" class="carrinhoCompras" height="40" alt="">
         </nav>
     </header>
     <!-- contato -->
@@ -159,6 +160,10 @@
                 <input type="email" id="email" placeholder="Email" required>
             </div>
             <div class="grid-item espacamento">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuarioCadastro" placeholder="Usuário" required>
+            </div>
+            <div class="grid-item">
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" placeholder="Senha" required>
             </div>

@@ -9,22 +9,44 @@
 </head>
 
 <body>
-
     <!-- Header -->
     <header>
         <nav>
             <img src="../img/logo.png" alt="Floriculture Logo" width="150">
             <div>
-                <a href="../index.html">Portuguese</a>
-                <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">Contact</a>
+                <a href="../index.html">Português</a>
+                <a href="./indexEnglish.html">Home</a>
+                <a href="" id="modalContato">Contact</a>
             </div>
-            <a href="#" style="background-color: #cac4ad; color: #3f5b45;">Login</a>
+            <span id="nomeUsuario" style="display: none;"><img id="iconUser" src="../img/userImg.png" alt=""></span>
+            <button id="btnEntrar">Login</button>
+            <img src="../img/carrinho-de-compras.png" class="carrinhoCompras" height="40" alt="">
         </nav>
     </header>
+    <!-- Contact -->
 
+    <section id="modalContatoContent" class="modalContato">
+        <article class="modal-content">
+            <button class="close" aria-label="Close modal">&times;</button>
+            <h2>Contact Form</h2>
+            <form id="contactForm" aria-labelledby="modalTitle">
+                <label for="contactName">Name:</label>
+                <input type="text" id="contactName" required>
+                
+                <label for="contactEmail">Email:</label>
+                <input type="email" id="contactEmail" required>
+                
+                <label for="contactMessage">Inquiries:</label>
+                <textarea id="contactMessage" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </article>
+    </section>
+    
+    
     <!-- Main Banner -->
+
     <section class="banner">
         <ul class="ulBannerImg">
             <li class="li1Banner"><img src="../img/image.png" alt=""></li>
@@ -38,28 +60,56 @@
     <section class="destaques">
         <h2>Highlights</h2>
         <div class="produtos">
-            <div class="produto">
-                <img src="../img/arranjo1.png" alt="Bouquet 1">
-                <h3>Classic Wedding Bouquet</h3>
-                <p>$150.00</p>
-            </div>
-            <div class="produto">
-                <img src="../img/arranjo2.png" alt="Bouquet 2">
-                <h3>Rustic Wedding Bouquet</h3>
-                <p>$120.00</p>
-            </div>
-            <div class="produto">
-                <img src="../img/arranjo3.png" alt="Bouquet 3">
-                <h3>Special Celebration Bouquet</h3>
-                <p>$180.00</p>
-            </div>
+            <ul>
+                <li class="test">
+                    <div class="produto">
+                        <img src="../img/arranjo1.png" alt="Arrangement 1">
+                        <h3>Classic Wedding Bouquet</h3>
+                        <p>R$ 150,00</p>
+                        <button>+</button>
+                    </div>
+                    <div class="produto">
+                        <img src="../img/arranjo2.png" alt="Arrangement 2">
+                        <h3>Rustic Wedding Bouquet</h3>
+                        <p>R$ 120,00</p>
+                        <button>+</button>
+                    </div>
+                    <div class="produto">
+                        <img src="../img/arranjo3.png" alt="Arrangement 3">
+                        <h3>Special Celebration Bouquet</h3>
+                        <p>R$ 180,00</p>
+                        <button>+</button>
+                    </div>
+                </li>
+                <li class="test">
+                    <div class="produto">
+                        <img src="../img/arranjo4.png" height="260px" alt="Arrangement 1">
+                        <h3>Luxury Red Rose Bouquet</h3>
+                        <p> R$ 220,00</p>
+                        <button>+</button>
+                    </div>
+                    <div class="produto">
+                        <img src="../img/arranjo5.png" alt="Arrangement 2">
+                        <h3>Wildflower Bouquet</h3>
+                        <p> R$ 95,00</p>
+                        <button>+</button>
+                    </div>
+                    <div class="produto">
+                        <img src="../img/arranjo6.png" alt="Arrangement 3">
+                        <h3>Exotic Orchid Arrangement</h3>
+                        <p>R$ 350,00</p>
+                        <button>+</button>
+                    </div>
+                </li>
+            </ul>
+            
         </div>
     </section>
 
     <!-- About Us -->
     <section class="sobre">
-        <h2>A Little About Us</h2>
-        <p>With over 6 years in the market, our flower shop is a reference in quality, tradition, and care in every detail. Our products are made with fresh, high-quality flowers, providing the beauty and charm you seek for special moments.</p>
+        <h2>A little about us</h2>
+        <p>For over 6 years in the market, our floriculture is a reference in quality, tradition, and care in every detail. Our products are made with fresh and high-quality flowers, providing the beauty and charm you seek for special moments.</p>
     </section>
 
     <!-- Footer -->
@@ -67,6 +117,85 @@
         <p>Copyright | ©Dream Garden</p>
     </footer>
 
+    <div class="modalLogin">
+        <ul class="ulModalLogin">
+            <li class="li1Modal">
+                <div class="div1Modal">
+                    <h1>Login</h1>
+                </div>
+                <div class="div2Modal"><img id="btnFecharModal" src="../img/iconFechar.png" alt=""></div>
+            </li>
+            <li class="liInfoUser">
+                <label id="labelUsuario" for="usuario">User</label>
+                <input type="text" name="usuario">
+                <label id="labelSenha" for="senha">Password</label>
+                <input type="password" name="senha">
+                <button id="btnEntrarModal">Login</button>
+            </li>
+            <li class="naoTenhoConta">
+                <a href="" id="btnNaoTenhoConta">I don’t have an account</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modalCadastro" id="modalCadastro">
+        <ul class="ulModalCadastro">
+            <li class="li1Modal">
+                <div class="div1Modal">
+                    <h1>Register</h1>
+                </div>
+                <div class="div2Modal"><img id="btnFecharModalCadastro" src="../img/iconFechar.png" alt=""></div>
+            </li>
+        </ul>
+        <div class="form-grid">
+            <div class="grid-item espacamento">
+                <label for="nomeCompleto">Full Name</label>
+                <input type="text" id="nomeCompleto" placeholder="Full Name" required>
+            </div>
+            <div class="grid-item">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="grid-item espacamento">
+                <label for="usuario">User</label>
+                <input type="text" id="usuarioCadastro" placeholder="User" required>
+            </div>
+            <div class="grid-item">
+                <label for="senha">Password</label>
+                <input type="password" id="senha" placeholder="Password" required>
+            </div>
+            <div class="grid-item">
+                <label for="confirmarSenha">Confirm Password</label>
+                <input type="password" id="confirmarSenha" placeholder="Password" required>
+            </div>
+            <div class="grid-item espacamento">
+                <label for="cep">ZIP Code</label>
+                <input type="text" id="cep" placeholder="ZIP Code" required>
+            </div>
+            <div class="grid-item">
+                <label for="rua">Street</label>
+                <input type="text" id="rua" placeholder="Street" required>
+            </div>
+            <div class="grid-item espacamento">
+                <label for="cidade">City</label>
+                <input type="text" id="cidade" placeholder="City" required>
+            </div>
+            <div class="grid-item">
+                <label for="estado">State</label>
+                <input type="text" id="estado" placeholder="State" required>
+            </div>
+            <div class="grid-item espacamento">
+                <label for="pais">Country</label>
+                <input type="text" id="pais" placeholder="Country" required>
+            </div>
+        </div>
+        <button id="btnCadastrarModal">Register</button>
+    </div>
+
+    <div class="modalOverlay" id="modalOverlay" style="display: none;"></div>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
