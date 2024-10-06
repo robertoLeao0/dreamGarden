@@ -7,7 +7,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Cabeçalho */
+
 header {
     color: #fff;
     text-align: center;
@@ -64,11 +64,11 @@ nav a:hover {
     transition: 2s;
 }
 
-.carrinhoComprasTablet{
+.carrinhoComprasTablet {
     display: none;
 }
 
-.carrinhoComprasMobile{
+.carrinhoComprasMobile {
     display: none;
 }
 
@@ -92,7 +92,7 @@ nav a:hover {
 }
 
 
-/* Banner */
+
 
 .ulBannerImg {
     display: flex;
@@ -193,7 +193,7 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -218,7 +218,7 @@ nav a:hover {
 .imagem-sobre img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* Bordas arredondadas na imagem */
+    border-radius: 10px;
 }
 
 .footer {
@@ -229,7 +229,7 @@ nav a:hover {
 }
 
 
-/* -------------MODAL------------- */
+
 
 
 .modalLogin {
@@ -342,7 +342,7 @@ nav a:hover {
 
 
 
-/* Modal Cadastro */
+
 .modalCadastro {
     display: none;
     width: 50%;
@@ -405,7 +405,7 @@ nav a:hover {
 }
 
 
-/* abrir modal contato  */
+
 .modalContato {
     display: none;
     position: fixed;
@@ -482,21 +482,21 @@ nav a:hover {
 
 
 
-/* botao de ajuda */
+
 
 .help-button {
     position: fixed;
-    bottom: 20px; 
-    right: 20px; 
-    background-color: #28a745; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    padding: 10px 20px; 
-    font-size: 16px; 
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .help-button:hover {
