@@ -1,0 +1,356 @@
+@media (max-width: 768px) {
+
+    .carrinhoCompras {
+        display: none;
+    }
+
+    .carrinhoComprasMobile {
+        display: none;
+    }
+
+    .carrinhoComprasTablet {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        right: 2.2%;
+        transition: 2s;
+        right: 5%;
+        display: block;
+    }
+
+    #iconUser {
+        width: 35px;
+        height: 35px;
+        right: 16.5%;
+        top: 27%;
+    }
+
+    #nameUser {
+        right: 10%;
+        top: 10%;
+    }
+
+    .li2Banner {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .li2Banner h1 {
+        line-height: 2;
+        font-size: 27px;
+    }
+
+    .ulBannerImg img {
+        width: 100%;
+    }
+
+    .destaques h2 {
+        font-size: 33px;
+        margin-bottom: 26px;
+    }
+
+    .produto {
+        width: 140px;
+        margin: 27px 20px;
+    }
+
+    .modalLogin {
+        width: 400px;
+        height: 450px;
+        right: 23%;
+        top: 10%;
+    }
+
+    .li1Modal img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .modalLogin input,
+    .modalLogin button {
+        width: 290px;
+        padding: 8px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+
+
+    /* Modal Cadastro */
+    .modalCadastro {
+        display: none;
+        width: 80%;
+        max-width: 700px;
+        height: auto;
+        border-radius: 16px;
+        background-color: #6E906C;
+        position: fixed;
+        right: 3.3%;
+        top: 0%;
+        padding: 30px;
+        z-index: 10;
+    }
+
+    .div1Modal {
+        width: 80%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        margin-left: 45px;
+    }
+
+    .div1Modal h1 {
+        height: 100%;
+        margin: 0px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+        margin-right: 10px;
+    }
+
+    .form-grid label {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .form-grid input[type="text"],
+    .form-grid input[type="password"],
+    .form-grid input[type="email"] {
+        width: 100%;
+        padding: 10px 1px 10px 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    #btnCadastrarModal {
+        width: 180px;
+        padding: 10px;
+        background-color: #cac4ad;
+        color: #3f5b45;
+        border: none;
+        border-radius: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: 0.7s;
+        font-size: 22px;
+    }
+
+    #btnCadastrarModal:hover {
+        padding: 20px;
+        width: 210px;
+        color: #dadfdb;
+        background-color: #425e49;
+    }
+
+
+
+
+
+
+}
+
+/* Estilos para telas de até 480px (celulares) */
+@media (max-width: 480px) {
+
+    .carrinhoComprasTablet {
+        display: none;
+    }
+
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        height: 10rem;
+    }
+
+
+    #btnEntrar {
+        margin-right: 3px;
+    }
+
+
+    /* Carrinho de compras */
+    .carrinhoComprasMobile {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 4%;
+        top: 70%;
+        display: block;
+        transition: 1.5s;
+    }
+
+    #iconUser {
+        width: 30px;
+        height: 30px;
+        right: 65%;
+        top: 80%;
+    }
+
+    #nameUser {
+        right: 50%;
+        top: 69%;
+    }
+
+
+
+    .banner {
+        padding: 18px;
+        margin: 0;
+
+    }
+
+    .ulBannerImg {
+        flex-direction: column;
+    }
+
+    .li2Banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .li2Banner h1 {
+        width: 100%;
+        line-height: 2.5;
+        font-size: 22px;
+        margin-left: 30px;
+    }
+
+    .ulBannerImg img {
+        width: 210px;
+    }
+
+
+    /* Destaques */
+
+    .destaques {
+        flex-direction: column;
+    }
+
+    .destaques h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .produtos ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .liDestaques {
+        flex-direction: column;
+    }
+
+    /* Produtos */
+    .produto {
+        width: 120px;
+        margin: 15px auto;
+    }
+
+    /* Modal Login */
+    .modalLogin {
+        width: 90%;
+        height: auto;
+        right: 5%;
+        top: 10%;
+    }
+
+    .li1Modal img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .modalLogin input,
+    .modalLogin button {
+        width: 60%;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+
+    /* Modal Cadastro */
+    .modalCadastro {
+        width: 90%;
+        right: 1%;
+        top: 1%;
+        padding: 10px;
+    }
+
+    .div1Modal {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .div1Modal h1 {
+        font-size: 19px;
+        height: auto;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0px;
+        margin-right: 0;
+    }
+
+    .form-grid label {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .form-grid input[type="text"],
+    .form-grid input[type="password"],
+    .form-grid input[type="email"] {
+        width: 90%;
+        padding: 3px;
+    }
+
+    #btnCadastrarModal {
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .sobre {
+
+        padding: 50px 20px;
+        background-color: #989393;
+    }
+
+
+    .sobre h2 {
+        width: 100%;
+    }
+
+    .sobre h1 {
+        margin-left: 10px;
+    }
+
+    .sobre-conteudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+
+
+    .help-button {
+        bottom: 16px;
+        right: 5px;
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+}

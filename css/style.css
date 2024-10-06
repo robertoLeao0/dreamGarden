@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f1f1f1;
     color: #333;
+    overflow-x: hidden;
 }
 
 /* Cabeçalho */
@@ -63,12 +64,20 @@ nav a:hover {
     transition: 2s;
 }
 
+.carrinhoComprasTablet{
+    display: none;
+}
+
+.carrinhoComprasMobile{
+    display: none;
+}
+
 #iconUser {
     position: absolute;
     width: 40px;
     height: 40px;
     cursor: pointer;
-    right: 12.5%;
+    right: 13.5%;
     top: 30%;
     transition: 2s;
 }
@@ -343,7 +352,7 @@ nav a:hover {
     background-color: #6E906C;
     position: fixed;
     right: 25%;
-    top: 10%;
+    top: 4%;
     padding: 50px;
     z-index: 10;
 }
@@ -461,7 +470,7 @@ nav a:hover {
 
 
 
-.test {
+.liDestaques {
     display: flex;
     padding: 20px;
 
@@ -476,20 +485,20 @@ nav a:hover {
 /* botao de ajuda */
 
 .help-button {
-    position: fixed; /* Fixa o botão na tela */
-    bottom: 20px; /* Distância do fundo da tela */
-    right: 20px; /* Distância da direita da tela */
-    background-color: #28a745; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    border: none; /* Remove borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    z-index: 1000; /* Mantém o botão acima de outros elementos */
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
 }
 
 .help-button:hover {
-    background-color: #218838; /* Cor ao passar o mouse */
+    background-color: #218838;
 }

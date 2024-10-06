@@ -3,6 +3,7 @@ function abrirModal(modal, overlay) {
     modal.style.display = 'block';
     overlay.style.display = 'block';
     document.body.classList.add('no-scroll');
+    document.getElementsByClassName('help-button')[0].style.display = 'none';
 }
 
 
@@ -10,10 +11,9 @@ function fecharModal(modal, overlay) {
     modal.style.display = 'none';
     overlay.style.display = 'none';
     document.body.classList.remove('no-scroll');
-    
+    document.getElementsByClassName('help-button')[0].style.display = 'block';
     const inputsLogin = document.querySelectorAll('.modalLogin input');
     inputsLogin.forEach(input => input.value = '');
-
     const inputsCadastro = document.querySelectorAll('#modalCadastro input');
     inputsCadastro.forEach(input => input.value = '');
 }
@@ -54,7 +54,6 @@ document.getElementById('btnCadastrarModal').addEventListener('click', () => {
 
     const usuariosExistentes = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-    // Validação: Verifica se o usuário já existe
     const usuarioJaExiste = usuariosExistentes.find(usuario => usuario.usuario === usuarioCadastro);
     if (usuarioJaExiste) {
         alert('Usuário já existe. Escolha outro nome de usuário.');
@@ -67,7 +66,6 @@ document.getElementById('btnCadastrarModal').addEventListener('click', () => {
         return;
     }
 
-    // Adiciona o novo usuário ao localStorage
     const novoUsuario = {
         nomeCompleto: document.getElementById('nomeCompleto').value,
         email: document.getElementById('email').value,
@@ -107,12 +105,13 @@ document.getElementById('btnEntrarModal').addEventListener('click', () => {
         nameUser.innerText = usuarioValido.usuario;
         document.getElementById('nomeUsuario').appendChild(nameUser);
         document.getElementById('nomeUsuario').style.display = 'inline';
-        document.getElementsByClassName('carrinhoCompras')[0].style.right = '35.5%';
+        document.getElementsByClassName('carrinhoCompras')[0].style.right = '34.5%';
         document.getElementById('btnEntrar').style.display = 'none';
         document.querySelector('input[name="usuario"]').value = '';
         document.querySelector('input[name="senha"]').value = '';
-
         fecharModal(document.getElementsByClassName('modalLogin')[0], document.getElementById('modalOverlay'));
+        document.getElementsByClassName('carrinhoComprasMobile')[0].style.top = '12%';
+        document.getElementsByClassName('carrinhoComprasTablet')[0].style.right = '57.5%';
 
     } else {
         alert('Usuário ou senha incorretos');
@@ -129,7 +128,9 @@ document.getElementById('nomeUsuario').addEventListener('click', () => {
         document.getElementById('nomeUsuario').innerHTML = '';
         document.getElementById('nomeUsuario').style.display = 'none';
         document.getElementsByClassName('carrinhoCompras')[0].style.right = '2.2%';
+        document.getElementsByClassName('carrinhoComprasMobile')[0].style.top = '70%';
         document.getElementById('btnEntrar').style.display = 'inline';
+        document.getElementsByClassName('carrinhoComprasTablet')[0].style.right = '5%';
     }
 });
 
